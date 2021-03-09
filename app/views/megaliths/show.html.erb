@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @megalith.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @megalith.address %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @megalith.category %>
+</p>
+
+<%= link_to 'Edit', edit_megalith_path(@megalith) %> |
+<%= link_to 'Back', megaliths_path %>

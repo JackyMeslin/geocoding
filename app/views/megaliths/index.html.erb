@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Megaliths</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @megaliths.each do |megalith| %>
+      <tr>
+        <td><%= megalith.name %></td>
+        <td><%= megalith.address %></td>
+        <td><%= megalith.category %></td>
+        <td><%= link_to 'Show', megalith %></td>
+        <td><%= link_to 'Edit', edit_megalith_path(megalith) %></td>
+        <td><%= link_to 'Destroy', megalith, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<%= link_to 'New Megalith', new_megalith_path %>
